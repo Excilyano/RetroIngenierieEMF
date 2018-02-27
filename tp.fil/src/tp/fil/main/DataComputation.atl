@@ -16,7 +16,13 @@ rule Model2Model {
 
 rule Class2Class {
 	from
-		s:Java!ClassDeclaration
+		s:Java!ClassDeclaration (
+			if(s.package.oclIsUndefined()) then
+				false
+			else
+				s.package.name.indexOf('model') <> -1 and s.package.package.name.indexOf('petstore') <> -1
+			endif
+		)
 	to
 		t:Data!Class(
 			name <- s.name,
