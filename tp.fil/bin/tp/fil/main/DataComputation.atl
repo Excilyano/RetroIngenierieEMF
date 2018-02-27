@@ -1,0 +1,50 @@
+-- @nsURI Java=http://www.eclipse.org/MoDisco/Java/0.2.incubation/java
+-- @path Data=/tp.fil/src/tp/fil/resources/Data.ecore
+
+module DataComputation;
+create OUT : Data from IN : Java;
+
+rule Model2Model {
+	from
+		s:Java!Model
+	to
+		t:Data!Model(
+			name <- s.name,
+			classes <- Java!ClassDeclaration.allInstances()
+		)
+}
+
+rule Class2Class {
+	from
+		s:Java!ClassDeclaration
+	to
+		t:Data!Class(
+			name <- s.name,
+			methods <- s.bodyDeclarations
+				->select(i | i.oclIsTypeOf(Java!MethodDeclaration)),
+			attributes <- s.bodyDeclarations
+				->select(i | i.oclIsTypeOf(Java!FieldDeclaration))
+		)
+}
+
+rule Meth2Meth {
+	from
+		s:Java!MethodDeclaration
+	to
+		t:Data!Method(
+			name <- s.name
+			--modifier <- s.modifier.visibility.toString(),
+			--type <- s.returnType.type.name
+		)
+}
+
+rule Field2Att {
+	from
+		s:Java!FieldDeclaration
+	to
+		t:Data!Attribute(
+			name <- s.fragments.first().name
+			--modifier <- s.modifier.visibility.toString(),
+			--type <- s.type.type.name
+		)
+}
