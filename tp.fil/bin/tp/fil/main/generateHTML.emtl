@@ -9,8 +9,118 @@
     </ownedModuleElement>
     <ownedModuleElement xsi:type="mtl:Template" name="generateHTML" visibility="Public" main="true">
       <body xsi:type="mtl:FileBlock" openMode="OverWrite">
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#xA;"/>
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" &lt;!DOCTYPE html>&#xA;&lt;html>&#xA;  &lt;head>&#xA;    &lt;meta charset=&quot;UTF-8&quot;>&#xA;    &lt;title>"/>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="model" referredVariable="/0/generateHTML/model">
+            <eType xsi:type="ecore:EClass" href="http://data#//Model"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://data#//Model/name"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" UML&lt;/title>&#xA;  &lt;/head>&#xA;  &lt;body>&#xA;&#x9;&lt;h1>"/>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="model" referredVariable="/0/generateHTML/model">
+            <eType xsi:type="ecore:EClass" href="http://data#//Model"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://data#//Model/name"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/h1>&lt;br/>&#xA;&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&lt;img src=&quot;http://yuml.me/diagram/scruffy/class/"/>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </body>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="class" referredVariable="/0/generateHTML/%/%.5/class">
+              <eType xsi:type="ecore:EClass" href="http://data#//Class"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://data#//Class/name"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="|"/>
+          <body xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/10/Sequence(String)">
+            <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/10/Sequence(String)">
+              <source xsi:type="ocl.ecore:PropertyCallExp" eType="/10/OrderedSet(Attribute)">
+                <source xsi:type="ocl.ecore:VariableExp" name="class" referredVariable="/0/generateHTML/%/%.5/class">
+                  <eType xsi:type="ecore:EClass" href="http://data#//Class"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://data#//Class/attributes"/>
+              </source>
+              <body xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/generateHTML/%/%.5/collect/collect/temp1">
+                  <eType xsi:type="ecore:EClass" href="http://data#//Attribute"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://data#//Attribute/name"/>
+              </body>
+              <iterator xsi:type="ocl.ecore:Variable" name="temp1">
+                <eType xsi:type="ecore:EClass" href="http://data#//Attribute"/>
+              </iterator>
+            </source>
+            <body xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="temp2" referredVariable="/0/generateHTML/%/%.5/collect/temp2">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </source>
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="temp2">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </iterator>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="|"/>
+          <body xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/10/Sequence(String)">
+            <source xsi:type="ocl.ecore:IteratorExp" name="collect" eType="/10/Sequence(String)">
+              <source xsi:type="ocl.ecore:PropertyCallExp" eType="/10/OrderedSet(Method)">
+                <source xsi:type="ocl.ecore:VariableExp" name="class" referredVariable="/0/generateHTML/%/%.5/class">
+                  <eType xsi:type="ecore:EClass" href="http://data#//Class"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://data#//Class/methods"/>
+              </source>
+              <body xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="temp1" referredVariable="/0/generateHTML/%/%.5/collect.1/collect/temp3">
+                  <eType xsi:type="ecore:EClass" href="http://data#//Method"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://data#//Method/name"/>
+              </body>
+              <iterator xsi:type="ocl.ecore:Variable" name="temp3">
+                <eType xsi:type="ecore:EClass" href="http://data#//Method"/>
+              </iterator>
+            </source>
+            <body xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="temp2" referredVariable="/0/generateHTML/%/%.5/collect.1/temp4">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </source>
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="();">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
+            </body>
+            <iterator xsi:type="ocl.ecore:Variable" name="temp4">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </iterator>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="]">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot; >&#xA;"/>
+          <loopVariable name="class">
+            <eType xsi:type="ecore:EClass" href="http://data#//Class"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/10/OrderedSet(Class)">
+            <source xsi:type="ocl.ecore:VariableExp" name="model" referredVariable="/0/generateHTML/model">
+              <eType xsi:type="ecore:EClass" href="http://data#//Model"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://data#//Model/classes"/>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;  &lt;/body>&#xA;&lt;/html>&#xA;&#xA;"/>
         <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="PetStore_rendering.html">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </fileUrl>
@@ -99,6 +209,53 @@
     <eType xsi:type="ecore:EClass" href="http://data#//Model"/>
   </ocl.ecore:Variable>
   <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://data#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://data#//Model"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Class)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://data#//Class"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Attribute)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://data#//Attribute"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(String)" instanceClassName="java.util.List">
+      <elementType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Method)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://data#//Method"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://data#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://data#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://data#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://data#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://data#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://data#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://data#//Class"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://data#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
     <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
   </ocl.ecore:Variable>
   <ecore:EAnnotation source="positions">
@@ -109,35 +266,235 @@
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/generateHTML">
       <details key="start" value="142"/>
-      <details key="end" value="308"/>
+      <details key="end" value="648"/>
       <details key="line" value="5"/>
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/generateHTML/%">
       <details key="start" value="207"/>
-      <details key="end" value="296"/>
+      <details key="end" value="636"/>
       <details key="line" value="7"/>
     </eAnnotations>
     <eAnnotations source="positions.3" references="/0/generateHTML/%/%">
       <details key="start" value="258"/>
-      <details key="end" value="260"/>
+      <details key="end" value="329"/>
       <details key="line" value="8"/>
     </eAnnotations>
     <eAnnotations source="positions.4" references="/0/generateHTML/%/%.1">
-      <details key="start" value="288"/>
-      <details key="end" value="289"/>
-      <details key="line" value="10"/>
+      <details key="start" value="330"/>
+      <details key="end" value="340"/>
+      <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.5" references="/0/generateHTML/%/%.2">
+    <eAnnotations source="positions.5" references="/0/generateHTML/%/%.1/model">
+      <details key="start" value="330"/>
+      <details key="end" value="335"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generateHTML/%/%.2">
+      <details key="start" value="343"/>
+      <details key="end" value="380"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateHTML/%/%.3">
+      <details key="start" value="381"/>
+      <details key="end" value="391"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generateHTML/%/%.3/model">
+      <details key="start" value="381"/>
+      <details key="end" value="386"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateHTML/%/%.4">
+      <details key="start" value="394"/>
+      <details key="end" value="406"/>
+      <details key="line" value="15"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateHTML/%/%.5">
+      <details key="start" value="407"/>
+      <details key="end" value="607"/>
+      <details key="line" value="17"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateHTML/%/%.5/%">
+      <details key="start" value="445"/>
+      <details key="end" value="494"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateHTML/%/%.5/%.1">
+      <details key="start" value="496"/>
+      <details key="end" value="499"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generateHTML/%/%.5/%.2">
+      <details key="start" value="503"/>
+      <details key="end" value="513"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/generateHTML/%/%.5/%.2/class">
+      <details key="start" value="503"/>
+      <details key="end" value="508"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generateHTML/%/%.5/%.3">
+      <details key="start" value="515"/>
+      <details key="end" value="516"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/generateHTML/%/%.5/collect">
+      <details key="start" value="517"/>
+      <details key="end" value="550"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/generateHTML/%/%.5/collect/collect">
+      <details key="start" value="517"/>
+      <details key="end" value="538"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/generateHTML/%/%.5/collect/collect/%">
+      <details key="start" value="517"/>
+      <details key="end" value="533"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/generateHTML/%/%.5/collect/collect/%/class">
+      <details key="start" value="517"/>
+      <details key="end" value="522"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generateHTML/%/%.5/collect/collect/%.1">
+      <details key="start" value="534"/>
+      <details key="end" value="538"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/generateHTML/%/%.5/collect/collect/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/generateHTML/%/%.5/collect/collect/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/generateHTML/%/%.5/collect/%">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/generateHTML/%/%.5/collect/%/temp2">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/generateHTML/%/%.5/collect/%/%">
+      <details key="start" value="546"/>
+      <details key="end" value="549"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/generateHTML/%/%.5/collect/temp2">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/generateHTML/%/%.5/%.4">
+      <details key="start" value="552"/>
+      <details key="end" value="553"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/generateHTML/%/%.5/collect.1">
+      <details key="start" value="554"/>
+      <details key="end" value="586"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/generateHTML/%/%.5/collect.1/collect">
+      <details key="start" value="554"/>
+      <details key="end" value="572"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/generateHTML/%/%.5/collect.1/collect/%">
+      <details key="start" value="554"/>
+      <details key="end" value="567"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/generateHTML/%/%.5/collect.1/collect/%/class">
+      <details key="start" value="554"/>
+      <details key="end" value="559"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/generateHTML/%/%.5/collect.1/collect/%.1">
+      <details key="start" value="568"/>
+      <details key="end" value="572"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/generateHTML/%/%.5/collect.1/collect/%.1/temp1">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/generateHTML/%/%.5/collect.1/collect/temp3">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/generateHTML/%/%.5/collect.1/%">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/generateHTML/%/%.5/collect.1/%/temp2">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/generateHTML/%/%.5/collect.1/%/%">
+      <details key="start" value="580"/>
+      <details key="end" value="585"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/generateHTML/%/%.5/collect.1/temp4">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/generateHTML/%/%.5/%.5">
+      <details key="start" value="590"/>
+      <details key="end" value="593"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/generateHTML/%/%.5/%.6">
+      <details key="start" value="596"/>
+      <details key="end" value="600"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/generateHTML/%/%.5/class">
+      <details key="start" value="413"/>
+      <details key="end" value="426"/>
+      <details key="line" value="17"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/generateHTML/%/%.5/%.7">
+      <details key="start" value="429"/>
+      <details key="end" value="442"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/generateHTML/%/%.5/%.7/model">
+      <details key="start" value="429"/>
+      <details key="end" value="434"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/generateHTML/%/%.6">
+      <details key="start" value="608"/>
+      <details key="end" value="629"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/generateHTML/%/%.7">
       <details key="start" value="214"/>
       <details key="end" value="239"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.6" references="/0/generateHTML/%/%.3">
+    <eAnnotations source="positions.46" references="/0/generateHTML/%/%.8">
       <details key="start" value="248"/>
       <details key="end" value="255"/>
       <details key="line" value="0"/>
     </eAnnotations>
-    <eAnnotations source="positions.7" references="/0/generateHTML/model">
+    <eAnnotations source="positions.47" references="/0/generateHTML/model">
       <details key="start" value="172"/>
       <details key="end" value="185"/>
       <details key="line" value="5"/>

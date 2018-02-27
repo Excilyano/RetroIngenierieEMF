@@ -5,8 +5,22 @@
 [template public generateHTML(model : Model)]
 [comment @main/]  
 [file ('PetStore_rendering.html', false, 'UTF-8')]
-	
-	[comment TO BE COMPLETED/]
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>[model.name /] UML</title>
+  </head>
+  <body>
+	<h1>[model.name /]</h1><br/>
+
+	[for (class : Class | model.classes)]
+		<img src="http://yuml.me/diagram/scruffy/class/[ '[' /][class.name/]|[class.attributes.name.concat(';')/]|[class.methods.name.concat('();')/][ ']' /]" >
+	[/for]
+
+
+  </body>
+</html>
 
 [/file]
 [/template]
