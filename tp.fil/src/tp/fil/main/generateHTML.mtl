@@ -6,7 +6,13 @@
 [comment @main/]  
 [file ('PetStore_rendering.html', false, 'UTF-8')]
 	
-	[comment TO BE COMPLETED/]
-
+	[model.name/]
+	<ul>
+		[for (it : Class | model.classes)]
+			<li>
+				<img src="http://yuml.me/diagram/scruffy/class/'[it.name/]" >
+			</li>
+		[/for]
+	</ul>
 [/file]
 [/template]
