@@ -1,0 +1,24 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>PetStore UML</title>
+  </head>
+  <body>
+	<h1>PetStore</h1><br/>
+
+		<img src="http://yuml.me/diagram/scruffy/class/[SellerContactInfo|contactInfoID;lastName;firstName;email;|getContactInfoID();getLastName();getFirstName();getEmail();setEmail();setContactInfoID();setLastName();setFirstName();validateWithMessage();]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[Tag|tagID;items;tag;refCount;|getTagID();setTagID();getTag();setTag();getRefCount();setRefCount();incrementRefCount();getItems();setItems();itemExists();]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[Address|addressID;street1;street2;city;state;zip;latitude;longitude;COMMA;|getAddressID();getStreet1();getStreet2();getCity();getState();getZip();getLatitude();getLongitude();setStreet1();setStreet2();setAddressID();setCity();setState();setZip();setLatitude();setLongitude();addressToString();validateWithMessage();]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[FileUploadResponse|itemId;productId;message;status;duration;durationString;startDate;endDate;uploadSize;thumbnail;|getMessage();setMessage();getItemId();setItemId();getProductId();setProductId();getStatus();setStatus();getDuration();setDuration();getDurationString();setDurationString();getStartDate();setStartDate();getEndDate();setEndDate();getUploadSize();setUploadSize();getThumbnail();setThumbnail();]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[Category|categoryID;name;description;imageURL;|getCategoryID();getName();getDescription();getImageURL();setImageURL();setCategoryID();setName();setDescription();]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[RatingBean|itemId;grade;cf;|getRatingText();setGrade();getGrade();setItemId();getItemId();]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[PayPalBean|postData;|getPostData();]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[ZipLocation|zipCode;city;state;|getZipCode();getCity();getState();setZipCode();setCity();setState();]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[Item|itemID;productID;name;description;imageURL;imageThumbURL;price;address;contactInfo;totalScore;numberOfVotes;disabled;tags;|getItemID();getProductID();getName();getDescription();getPrice();getImageURL();getImageThumbURL();getAddress();getContactInfo();getTotalScore();getNumberOfVotes();getDisabled();setItemID();setProductID();setName();setDescription();setImageURL();setImageThumbURL();setPrice();setAddress();setContactInfo();setTotalScore();setNumberOfVotes();setDisabled();getTags();setTags();addRating();checkAverageRating();tagsAsString();containsTag();validateWithMessage();]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[Product|productID;categoryID;name;description;imageURL;|getProductID();getCategoryID();getName();getDescription();getImageURL();setCategoryID();setProductID();setName();setDescription();setImageURL();]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[CatalogFacade|emf;utx;bDebug;|contextDestroyed();contextInitialized();getCategories();getProducts();getAllItemsFromCategory();getItemInChunkVLH();getItemsVLH();getItemsByItemID();getItemsByItemIDByRadius();getItemsByCategoryVLH();getItemsByCategoryByRadiusVLH();getZipCodeLocations();getProducts();getItems();getCategory();getItem();addItem();updateItem();doSearch();addTagsToItemId();addTag();getTagsInChunk();getTag();indexItem();]" >
+
+
+  </body>
+</html>

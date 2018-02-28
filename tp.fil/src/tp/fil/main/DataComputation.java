@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.gmt.modisco.java.ClassDeclaration;
 import org.eclipse.gmt.modisco.java.FieldDeclaration;
 import org.eclipse.gmt.modisco.java.MethodDeclaration;
 import org.eclipse.gmt.modisco.java.emf.JavaPackage;
@@ -44,7 +45,7 @@ public class DataComputation {
 			javaModel = resSet.createResource(URI.createFileURI("../PetStore/PetStore_java.xmi"));
 			javaModel.load(null);
 			
-			dataModel = resSet.createResource(URI.createFileURI("./PetStore_data.xmi"));
+			dataModel = resSet.createResource(URI.createFileURI("./output/java/GeneratedFromJava.xmi"));
 			
 			/*
 			 * Beginning of the part to be completed...
@@ -71,41 +72,48 @@ public class DataComputation {
 					fullModel.eSet(fullModel.eClass().getEStructuralFeature("name"), current.eGet(feature));
 					break;
 				case "ClassDeclaration":
-					EClass modelClass = (EClass) dataPackage.getEClassifier("Class");
-					EObject classObject = dataPackage.getEFactoryInstance().create(modelClass);
-					
-					feature = current.eClass().getEStructuralFeature("name");
-					classObject.eSet(classObject.eClass().getEStructuralFeature("name"), current.eGet(feature));
-
-					
-					classObject.eSet(classObject.eClass().getEStructuralFeature("name"), current.eGet(feature));
-					
-					
-					feature = fullModel.eClass().getEStructuralFeature("classes");
-					
-					classList = (EList<EObject>) fullModel.eGet(feature);
-					classList.add(classObject);
-					
-					
-					EList<EObject> bodyDeclarations =
-							(EList<EObject>) current.eGet(current.eClass().getEStructuralFeature("bodyDeclarations"));
-					for (EObject bodyDeclaration : bodyDeclarations) {
-						if (bodyDeclaration instanceof FieldDeclaration) {
-							EClass fieldClass = (EClass) dataPackage.getEClassifier("Attribute");
-							EObject fieldObject = dataPackage.getEFactoryInstance().create(fieldClass);
-							String fieldName = ((FieldDeclaration) bodyDeclaration).getFragments().get(0).getName();
-							fieldObject.eSet(fieldObject.eClass().getEStructuralFeature("name"), fieldName);
-							fieldList = (EList<EObject>) classObject.eGet(classObject.eClass().getEStructuralFeature("attributes"));
-							fieldList.add(fieldObject);
-							dataModel.getContents().addAll(fieldList);
-						} else if (bodyDeclaration instanceof MethodDeclaration) {
-							EClass methodClass = (EClass) dataPackage.getEClassifier("Method");
-							EObject methodObject = dataPackage.getEFactoryInstance().create(methodClass);
-							String methodName = ((MethodDeclaration) bodyDeclaration).getName();
-							methodObject.eSet(methodObject.eClass().getEStructuralFeature("name"), methodName);
-							methodList = (EList<EObject>) classObject.eGet(classObject.eClass().getEStructuralFeature("methods"));
-							methodList.add(methodObject);
-							dataModel.getContents().addAll(methodList);
+					ClassDeclaration curClass = (ClassDeclaration) current;
+					String packageName = curClass.getPackage() == null ? "": curClass.getPackage().getName();
+					if ("model".equals(packageName)) {
+						String subPackageName = curClass.getPackage().getPackage() == null ? "" : curClass.getPackage().getPackage().getName();
+						if ("petstore".equals(subPackageName)) {
+							EClass modelClass = (EClass) dataPackage.getEClassifier("Class");
+							EObject classObject = dataPackage.getEFactoryInstance().create(modelClass);
+							
+							feature = current.eClass().getEStructuralFeature("name");
+							classObject.eSet(classObject.eClass().getEStructuralFeature("name"), current.eGet(feature));
+		
+							
+							classObject.eSet(classObject.eClass().getEStructuralFeature("name"), current.eGet(feature));
+							
+							
+							feature = fullModel.eClass().getEStructuralFeature("classes");
+							
+							classList = (EList<EObject>) fullModel.eGet(feature);
+							classList.add(classObject);
+							
+							
+							EList<EObject> bodyDeclarations =
+									(EList<EObject>) current.eGet(current.eClass().getEStructuralFeature("bodyDeclarations"));
+							for (EObject bodyDeclaration : bodyDeclarations) {
+								if (bodyDeclaration instanceof FieldDeclaration) {
+									EClass fieldClass = (EClass) dataPackage.getEClassifier("Attribute");
+									EObject fieldObject = dataPackage.getEFactoryInstance().create(fieldClass);
+									String fieldName = ((FieldDeclaration) bodyDeclaration).getFragments().get(0).getName();
+									fieldObject.eSet(fieldObject.eClass().getEStructuralFeature("name"), fieldName);
+									fieldList = (EList<EObject>) classObject.eGet(classObject.eClass().getEStructuralFeature("attributes"));
+									fieldList.add(fieldObject);
+									dataModel.getContents().addAll(fieldList);
+								} else if (bodyDeclaration instanceof MethodDeclaration) {
+									EClass methodClass = (EClass) dataPackage.getEClassifier("Method");
+									EObject methodObject = dataPackage.getEFactoryInstance().create(methodClass);
+									String methodName = ((MethodDeclaration) bodyDeclaration).getName();
+									methodObject.eSet(methodObject.eClass().getEStructuralFeature("name"), methodName);
+									methodList = (EList<EObject>) classObject.eGet(classObject.eClass().getEStructuralFeature("methods"));
+									methodList.add(methodObject);
+									dataModel.getContents().addAll(methodList);
+								}
+							}
 						}
 					}
 					break;

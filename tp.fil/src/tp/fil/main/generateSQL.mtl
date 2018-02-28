@@ -5,8 +5,11 @@
 [template public generateSQL(model : Model)]
 [comment @main/] 
 [file ('PetStore_database.sql', false, 'UTF-8')]
-	
-	[comment TO BE COMPLETED/]
 
+[for (class : Class | model.classes)]
+CREATE TABLE [class.name/] (
+	[for (field : Attribute | class.attributes) separator (',\n\t')][field.name.concat('\tVARCHAR(100)')/][/for]
+);
+[/for]
 [/file]
 [/template]

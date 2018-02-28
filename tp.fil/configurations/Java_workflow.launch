@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.modisco.workflow.launchType">
+<listAttribute key="serializedWorkflow">
+<listEntry value="DataComputationJava"/>
+<listEntry value="0"/>
+<listEntry value="org.eclipse.jdt.launching.localJavaApplication"/>
+<listEntry value="GenerateHTMLFromJava"/>
+<listEntry value="0"/>
+<listEntry value="org.eclipse.acceleo.ide.ui.launching.launchConfigurationType"/>
+<listEntry value="GenerateSQLFromJava"/>
+<listEntry value="0"/>
+<listEntry value="org.eclipse.acceleo.ide.ui.launching.launchConfigurationType"/>
+</listAttribute>
+</launchConfiguration>

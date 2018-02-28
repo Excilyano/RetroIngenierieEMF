@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.modisco.workflow.launchType">
+<stringAttribute key="bad_container_name" value="\tp.fil\configurations\fullWorkflow"/>
+<listAttribute key="serializedWorkflow">
+<listEntry value="Java_workflow"/>
+<listEntry value="0"/>
+<listEntry value="org.eclipse.modisco.workflow.launchType"/>
+<listEntry value="ATL_workflow"/>
+<listEntry value="0"/>
+<listEntry value="org.eclipse.modisco.workflow.launchType"/>
+</listAttribute>
+</launchConfiguration>
