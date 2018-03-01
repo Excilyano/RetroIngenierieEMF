@@ -16,11 +16,11 @@ rule Model2Model {
 
 rule Class2Class {
 	from
-		s:Java!ClassDeclaration (
-			if(s.package.oclIsUndefined()) then
-				false
-			else
-				s.package.name.indexOf('model') <> -1 and s.package.package.name.indexOf('petstore') <> -1
+		s:Java!ClassDeclaration
+		(
+			if (not s.package.oclIsUndefined()) then
+				s.package.belongsToPetstoreModel()
+			else false
 			endif
 		)
 	to
@@ -36,6 +36,7 @@ rule Class2Class {
 rule Meth2Meth {
 	from
 		s:Java!MethodDeclaration
+			(s.hasDefinedPackage())
 	to
 		t:Data!Method(
 			name <- s.name
@@ -47,6 +48,7 @@ rule Meth2Meth {
 rule Field2Att {
 	from
 		s:Java!FieldDeclaration
+			(s.hasDefinedPackage())
 	to
 		t:Data!Attribute(
 			name <- s.fragments.first().name
@@ -54,3 +56,23 @@ rule Field2Att {
 			--type <- s.type.type.name
 		)
 }
+
+helper context Java!Package def: belongsToPetstoreModel(): Boolean =
+    if(self.oclIsUndefined()) then
+        false
+    else
+        if(self.package.oclIsUndefined()) then
+            false
+        else
+            self.name.indexOf('model') <> -1 and self.package.name.indexOf('petstore') <> -1
+        endif
+    endif;
+
+helper context Java!BodyDeclaration def: hasDefinedPackage(): Boolean =
+    if (not self.originalCompilationUnit.oclIsUndefined()) then
+		if (not self.originalCompilationUnit.package.oclIsUndefined()) then
+			self.originalCompilationUnit.package.belongsToPetstoreModel()
+		else false
+		endif
+	else false
+	endif;
