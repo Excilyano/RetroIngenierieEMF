@@ -41,7 +41,14 @@ rule Meth2Meth {
 		t:Data!Method(
 			name <- s.name,
 			modifier <- s.modifier.visibility.toString(),
-			type <- s.returnType.type.name
+			type <- if s.returnType.type.name.indexOf('<') <> -1 then
+						s.returnType.type.name
+							.substring(1, s.returnType.type.name.indexOf('>'))
+							.regexReplaceAll('<', ' of ')
+							.regexReplaceAll('[^\\s]*\\.', '')
+					else
+						s.returnType.type.name.regexReplaceAll('[^\\s]*\\.', '')					
+					endif
 		)
 }
 
@@ -53,7 +60,14 @@ rule Field2Att {
 		t:Data!Attribute(
 			name <- s.fragments.first().name,
 			modifier <- s.modifier.visibility.toString(),
-			type <- s.type.type.name
+			type <- if s.type.type.name.indexOf('<') <> -1 then
+						s.type.type.name
+							.substring(1, s.type.type.name.indexOf('>'))
+							.regexReplaceAll('<', ' of ')
+							.regexReplaceAll('[^\\s]*\\.', '')
+					else
+						s.type.type.name.regexReplaceAll('[^\\s]*\\.', '')
+					endif
 		)
 }
 

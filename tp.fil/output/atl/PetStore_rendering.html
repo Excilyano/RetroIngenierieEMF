@@ -22,12 +22,12 @@
 						+ setContactInfoID() : void;
 						+ setLastName() : void;
 						+ setFirstName() : void;
-						+ validateWithMessage() : java.lang.String[];
+						+ validateWithMessage() : String[];
 			]" >
 		<img src="http://yuml.me/diagram/scruffy/class/[Tag
 			|
 	 					- tagID : int;
-	 					- items : java.util.Collection<com.sun.javaee.blueprints.petstore.model.Item>;
+	 					- items : Collection of Item;
 	 					- tag : String;
 	 					- refCount : int;
 			|
@@ -38,7 +38,7 @@
 						+ getRefCount() : int;
 						+ setRefCount() : void;
 						+ incrementRefCount() : void;
-						+ getItems() : java.util.Collection<com.sun.javaee.blueprints.petstore.model.Item>;
+						+ getItems() : Collection of Item;
 						+ setItems() : void;
 						+ itemExists() : boolean;
 			]" >
@@ -71,7 +71,7 @@
 						+ setLatitude() : void;
 						+ setLongitude() : void;
 						+ addressToString() : String;
-						+ validateWithMessage() : java.lang.String[];
+						+ validateWithMessage() : String[];
 			]" >
 		<img src="http://yuml.me/diagram/scruffy/class/[FileUploadResponse
 			|
@@ -129,7 +129,7 @@
 	 					- grade : int;
 	 					- cf : CatalogFacade;
 			|
-						+ getRatingText() : java.lang.String[];
+						+ getRatingText() : String[];
 						+ setGrade() : void;
 						+ getGrade() : int;
 						+ setItemId() : void;
@@ -168,7 +168,7 @@
 	 					- totalScore : int;
 	 					- numberOfVotes : int;
 	 					- disabled : int;
-	 					- tags : java.util.Collection<com.sun.javaee.blueprints.petstore.model.Tag>;
+	 					- tags : Collection of Tag;
 			|
 						+ getItemID() : String;
 						+ getProductID() : String;
@@ -194,13 +194,13 @@
 						+ setTotalScore() : void;
 						+ setNumberOfVotes() : void;
 						+ setDisabled() : void;
-						+ getTags() : java.util.Collection<com.sun.javaee.blueprints.petstore.model.Tag>;
+						+ getTags() : Collection of Tag;
 						+ setTags() : void;
 						+ addRating() : void;
 						+ checkAverageRating() : int;
 						+ tagsAsString() : String;
 						+ containsTag() : boolean;
-						+ validateWithMessage() : java.lang.String[];
+						+ validateWithMessage() : String[];
 			]" >
 		<img src="http://yuml.me/diagram/scruffy/class/[Product
 			|
@@ -229,18 +229,18 @@
 			|
 						+ contextDestroyed() : void;
 						+ contextInitialized() : void;
-						+ getCategories() : java.util.List<com.sun.javaee.blueprints.petstore.model.Category>;
-						+ getProducts() : java.util.List<com.sun.javaee.blueprints.petstore.model.Product>;
-						+ getAllItemsFromCategory() : java.util.List<com.sun.javaee.blueprints.petstore.model.Item>;
-						+ getItemInChunkVLH() : java.util.List<com.sun.javaee.blueprints.petstore.model.Item>;
-						+ getItemsVLH() : java.util.List<com.sun.javaee.blueprints.petstore.model.Item>;
-						+ getItemsByItemID() : java.util.List<com.sun.javaee.blueprints.petstore.model.Item>;
-						+ getItemsByItemIDByRadius() : java.util.List<com.sun.javaee.blueprints.petstore.model.Item>;
-						+ getItemsByCategoryVLH() : java.util.List<com.sun.javaee.blueprints.petstore.model.Item>;
-						+ getItemsByCategoryByRadiusVLH() : java.util.List<com.sun.javaee.blueprints.petstore.model.Item>;
-						+ getZipCodeLocations() : java.util.List<com.sun.javaee.blueprints.petstore.model.ZipLocation>;
-						+ getProducts() : java.util.List<com.sun.javaee.blueprints.petstore.model.Product>;
-						+ getItems() : java.util.List<com.sun.javaee.blueprints.petstore.model.Item>;
+						+ getCategories() : List of Category;
+						+ getProducts() : List of Product;
+						+ getAllItemsFromCategory() : List of Item;
+						+ getItemInChunkVLH() : List of Item;
+						+ getItemsVLH() : List of Item;
+						+ getItemsByItemID() : List of Item;
+						+ getItemsByItemIDByRadius() : List of Item;
+						+ getItemsByCategoryVLH() : List of Item;
+						+ getItemsByCategoryByRadiusVLH() : List of Item;
+						+ getZipCodeLocations() : List of ZipLocation;
+						+ getProducts() : List of Product;
+						+ getItems() : List of Item;
 						+ getCategory() : Category;
 						+ getItem() : Item;
 						+ addItem() : String;
@@ -248,7 +248,7 @@
 						+ doSearch() : Collection;
 						+ addTagsToItemId() : void;
 						+ addTag() : Tag;
-						+ getTagsInChunk() : java.util.List<com.sun.javaee.blueprints.petstore.model.Tag>;
+						+ getTagsInChunk() : List of Tag;
 						+ getTag() : Tag;
 	 					- indexItem() : void;
 			]" >

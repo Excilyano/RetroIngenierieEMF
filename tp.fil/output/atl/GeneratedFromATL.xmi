@@ -20,7 +20,7 @@
   <data:Method name="setContactInfoID" type="void" modifier="public"/>
   <data:Method name="setLastName" type="void" modifier="public"/>
   <data:Method name="setFirstName" type="void" modifier="public"/>
-  <data:Method name="validateWithMessage" type="java.lang.String[]" modifier="public"/>
+  <data:Method name="validateWithMessage" type="String[]" modifier="public"/>
   <data:Method name="getTagID" type="int" modifier="public"/>
   <data:Method name="setTagID" type="void" modifier="public"/>
   <data:Method name="getTag" type="String" modifier="public"/>
@@ -28,7 +28,7 @@
   <data:Method name="getRefCount" type="int" modifier="public"/>
   <data:Method name="setRefCount" type="void" modifier="public"/>
   <data:Method name="incrementRefCount" type="void" modifier="public"/>
-  <data:Method name="getItems" type="java.util.Collection&lt;com.sun.javaee.blueprints.petstore.model.Item>" modifier="public"/>
+  <data:Method name="getItems" type="Collection of Item" modifier="public"/>
   <data:Method name="setItems" type="void" modifier="public"/>
   <data:Method name="itemExists" type="boolean" modifier="public"/>
   <data:Method name="getAddressID" type="String" modifier="public"/>
@@ -48,7 +48,7 @@
   <data:Method name="setLatitude" type="void" modifier="public"/>
   <data:Method name="setLongitude" type="void" modifier="public"/>
   <data:Method name="addressToString" type="String" modifier="public"/>
-  <data:Method name="validateWithMessage" type="java.lang.String[]" modifier="public"/>
+  <data:Method name="validateWithMessage" type="String[]" modifier="public"/>
   <data:Method name="getMessage" type="String" modifier="public"/>
   <data:Method name="setMessage" type="void" modifier="public"/>
   <data:Method name="getItemId" type="String" modifier="public"/>
@@ -77,7 +77,7 @@
   <data:Method name="setCategoryID" type="void" modifier="public"/>
   <data:Method name="setName" type="void" modifier="public"/>
   <data:Method name="setDescription" type="void" modifier="public"/>
-  <data:Method name="getRatingText" type="java.lang.String[]" modifier="public"/>
+  <data:Method name="getRatingText" type="String[]" modifier="public"/>
   <data:Method name="setGrade" type="void" modifier="public"/>
   <data:Method name="getGrade" type="int" modifier="public"/>
   <data:Method name="setItemId" type="void" modifier="public"/>
@@ -113,13 +113,13 @@
   <data:Method name="setTotalScore" type="void" modifier="public"/>
   <data:Method name="setNumberOfVotes" type="void" modifier="public"/>
   <data:Method name="setDisabled" type="void" modifier="public"/>
-  <data:Method name="getTags" type="java.util.Collection&lt;com.sun.javaee.blueprints.petstore.model.Tag>" modifier="public"/>
+  <data:Method name="getTags" type="Collection of Tag" modifier="public"/>
   <data:Method name="setTags" type="void" modifier="public"/>
   <data:Method name="addRating" type="void" modifier="public"/>
   <data:Method name="checkAverageRating" type="int" modifier="public"/>
   <data:Method name="tagsAsString" type="String" modifier="public"/>
   <data:Method name="containsTag" type="boolean" modifier="public"/>
-  <data:Method name="validateWithMessage" type="java.lang.String[]" modifier="public"/>
+  <data:Method name="validateWithMessage" type="String[]" modifier="public"/>
   <data:Method name="getProductID" type="String" modifier="public"/>
   <data:Method name="getCategoryID" type="String" modifier="public"/>
   <data:Method name="getName" type="String" modifier="public"/>
@@ -132,18 +132,18 @@
   <data:Method name="setImageURL" type="void" modifier="public"/>
   <data:Method name="contextDestroyed" type="void" modifier="public"/>
   <data:Method name="contextInitialized" type="void" modifier="public"/>
-  <data:Method name="getCategories" type="java.util.List&lt;com.sun.javaee.blueprints.petstore.model.Category>" modifier="public"/>
-  <data:Method name="getProducts" type="java.util.List&lt;com.sun.javaee.blueprints.petstore.model.Product>" modifier="public"/>
-  <data:Method name="getAllItemsFromCategory" type="java.util.List&lt;com.sun.javaee.blueprints.petstore.model.Item>" modifier="public"/>
-  <data:Method name="getItemInChunkVLH" type="java.util.List&lt;com.sun.javaee.blueprints.petstore.model.Item>" modifier="public"/>
-  <data:Method name="getItemsVLH" type="java.util.List&lt;com.sun.javaee.blueprints.petstore.model.Item>" modifier="public"/>
-  <data:Method name="getItemsByItemID" type="java.util.List&lt;com.sun.javaee.blueprints.petstore.model.Item>" modifier="public"/>
-  <data:Method name="getItemsByItemIDByRadius" type="java.util.List&lt;com.sun.javaee.blueprints.petstore.model.Item>" modifier="public"/>
-  <data:Method name="getItemsByCategoryVLH" type="java.util.List&lt;com.sun.javaee.blueprints.petstore.model.Item>" modifier="public"/>
-  <data:Method name="getItemsByCategoryByRadiusVLH" type="java.util.List&lt;com.sun.javaee.blueprints.petstore.model.Item>" modifier="public"/>
-  <data:Method name="getZipCodeLocations" type="java.util.List&lt;com.sun.javaee.blueprints.petstore.model.ZipLocation>" modifier="public"/>
-  <data:Method name="getProducts" type="java.util.List&lt;com.sun.javaee.blueprints.petstore.model.Product>" modifier="public"/>
-  <data:Method name="getItems" type="java.util.List&lt;com.sun.javaee.blueprints.petstore.model.Item>" modifier="public"/>
+  <data:Method name="getCategories" type="List of Category" modifier="public"/>
+  <data:Method name="getProducts" type="List of Product" modifier="public"/>
+  <data:Method name="getAllItemsFromCategory" type="List of Item" modifier="public"/>
+  <data:Method name="getItemInChunkVLH" type="List of Item" modifier="public"/>
+  <data:Method name="getItemsVLH" type="List of Item" modifier="public"/>
+  <data:Method name="getItemsByItemID" type="List of Item" modifier="public"/>
+  <data:Method name="getItemsByItemIDByRadius" type="List of Item" modifier="public"/>
+  <data:Method name="getItemsByCategoryVLH" type="List of Item" modifier="public"/>
+  <data:Method name="getItemsByCategoryByRadiusVLH" type="List of Item" modifier="public"/>
+  <data:Method name="getZipCodeLocations" type="List of ZipLocation" modifier="public"/>
+  <data:Method name="getProducts" type="List of Product" modifier="public"/>
+  <data:Method name="getItems" type="List of Item" modifier="public"/>
   <data:Method name="getCategory" type="Category" modifier="public"/>
   <data:Method name="getItem" type="Item" modifier="public"/>
   <data:Method name="addItem" type="String" modifier="public"/>
@@ -151,7 +151,7 @@
   <data:Method name="doSearch" type="Collection" modifier="public"/>
   <data:Method name="addTagsToItemId" type="void" modifier="public"/>
   <data:Method name="addTag" type="Tag" modifier="public"/>
-  <data:Method name="getTagsInChunk" type="java.util.List&lt;com.sun.javaee.blueprints.petstore.model.Tag>" modifier="public"/>
+  <data:Method name="getTagsInChunk" type="List of Tag" modifier="public"/>
   <data:Method name="getTag" type="Tag" modifier="public"/>
   <data:Method name="indexItem" type="void" modifier="private"/>
   <data:Attribute name="contactInfoID" type="String" modifier="private"/>
@@ -159,7 +159,7 @@
   <data:Attribute name="firstName" type="String" modifier="private"/>
   <data:Attribute name="email" type="String" modifier="private"/>
   <data:Attribute name="tagID" type="int" modifier="private"/>
-  <data:Attribute name="items" type="java.util.Collection&lt;com.sun.javaee.blueprints.petstore.model.Item>" modifier="private"/>
+  <data:Attribute name="items" type="Collection of Item" modifier="private"/>
   <data:Attribute name="tag" type="String" modifier="private"/>
   <data:Attribute name="refCount" type="int" modifier="private"/>
   <data:Attribute name="addressID" type="String" modifier="private"/>
@@ -204,7 +204,7 @@
   <data:Attribute name="totalScore" type="int" modifier="private"/>
   <data:Attribute name="numberOfVotes" type="int" modifier="private"/>
   <data:Attribute name="disabled" type="int" modifier="private"/>
-  <data:Attribute name="tags" type="java.util.Collection&lt;com.sun.javaee.blueprints.petstore.model.Tag>" modifier="private"/>
+  <data:Attribute name="tags" type="Collection of Tag" modifier="private"/>
   <data:Attribute name="productID" type="String" modifier="private"/>
   <data:Attribute name="categoryID" type="String" modifier="private"/>
   <data:Attribute name="name" type="String" modifier="private"/>
