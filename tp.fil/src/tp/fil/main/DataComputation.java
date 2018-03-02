@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.gmt.modisco.java.ClassDeclaration;
 import org.eclipse.gmt.modisco.java.FieldDeclaration;
 import org.eclipse.gmt.modisco.java.MethodDeclaration;
+import org.eclipse.gmt.modisco.java.SingleVariableDeclaration;
 import org.eclipse.gmt.modisco.java.emf.JavaPackage;
 
 public class DataComputation {
@@ -62,6 +63,7 @@ public class DataComputation {
 			EList<EObject> classList = null;
 			EList<EObject> fieldList = null;
 			EList<EObject> methodList = null;
+			EList<EObject> paramsList = null;
 			
 			while(it.hasNext()) {
 				EObject current = it.next();
@@ -139,7 +141,6 @@ public class DataComputation {
 									}
 									returnType = returnType.replaceAll("[^\\s]*\\.", "");
 									
-									
 									methodObject.eSet(methodObject.eClass().getEStructuralFeature("name"), methodName);
 									methodObject.eSet(methodObject.eClass().getEStructuralFeature("modifier"), modifier);
 									methodObject.eSet(methodObject.eClass().getEStructuralFeature("type"), returnType);
@@ -147,6 +148,32 @@ public class DataComputation {
 									methodList = (EList<EObject>) classObject.eGet(classObject.eClass().getEStructuralFeature("methods"));
 									methodList.add(methodObject);
 									dataModel.getContents().addAll(methodList);
+									
+									/*
+									paramsList = (EList<EObject>) mDeclaration.eGet(mDeclaration.eClass().getEStructuralFeature("parameters"));
+									for(EObject svDeclaration : paramsList) {
+										EClass paramClass = (EClass) dataPackage.getEClassifier("Parameter");
+										EObject paramObject = dataPackage.getEFactoryInstance().create(paramClass);
+										
+										SingleVariableDeclaration svd = (SingleVariableDeclaration) svDeclaration;
+										String paramName = svd.getName();
+										String paramType = svd.getType().getType().getName();
+										
+										// Formatting name output
+										if (paramType.contains("<")) {
+											paramType = paramType
+													.substring(0, paramType.indexOf('>'))
+													.replaceAll("<", " of ");
+										}
+										paramType = paramType.replaceAll("[^\\s]*\\.", "");
+										
+										paramObject.eSet(paramObject.eClass().getEStructuralFeature("name"), paramName);
+										paramObject.eSet(paramObject.eClass().getEStructuralFeature("type"), paramType);
+										
+										paramsList.add(paramObject);
+									}
+									dataModel.getContents().addAll(paramsList);
+									*/
 								}
 							}
 						}

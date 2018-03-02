@@ -48,7 +48,8 @@ rule Meth2Meth {
 							.regexReplaceAll('[^\\s]*\\.', '')
 					else
 						s.returnType.type.name.regexReplaceAll('[^\\s]*\\.', '')					
-					endif
+					endif,
+			parameters <- s.parameters
 		)
 }
 
@@ -71,6 +72,24 @@ rule Field2Att {
 		)
 }
 
+rule Param2Param {
+	from
+		s:Java!SingleVariableDeclaration
+			(s.hasDefinedPackage())
+	to
+		t:Data!Parameter(
+			name <- s.name,
+			type <- if s.type.type.name.indexOf('<') <> -1 then
+						s.type.type.name
+							.substring(1, s.type.type.name.indexOf('<'))
+							.regexReplaceAll('<', ' of ')
+							.regexReplaceAll('[^\\s]*\\.', '')
+					else
+						s.type.type.name.regexReplaceAll('[^\\s]*\\.', '')
+					endif
+		)
+}
+
 helper context Java!Package def: belongsToPetstoreModel(): Boolean =
     if(self.oclIsUndefined()) then
         false
@@ -83,6 +102,15 @@ helper context Java!Package def: belongsToPetstoreModel(): Boolean =
     endif;
 
 helper context Java!BodyDeclaration def: hasDefinedPackage(): Boolean =
+    if (not self.originalCompilationUnit.oclIsUndefined()) then
+		if (not self.originalCompilationUnit.package.oclIsUndefined()) then
+			self.originalCompilationUnit.package.belongsToPetstoreModel()
+		else false
+		endif
+	else false
+	endif;
+
+helper context Java!SingleVariableDeclaration def: hasDefinedPackage(): Boolean =
     if (not self.originalCompilationUnit.oclIsUndefined()) then
 		if (not self.originalCompilationUnit.package.oclIsUndefined()) then
 			self.originalCompilationUnit.package.belongsToPetstoreModel()
