@@ -39,9 +39,9 @@ rule Meth2Meth {
 			(s.hasDefinedPackage())
 	to
 		t:Data!Method(
-			name <- s.name
-			--modifier <- s.modifier.visibility.toString(),
-			--type <- s.returnType.type.name
+			name <- s.name,
+			modifier <- s.modifier.visibility.toString(),
+			type <- s.returnType.type.name
 		)
 }
 
@@ -51,9 +51,9 @@ rule Field2Att {
 			(s.hasDefinedPackage())
 	to
 		t:Data!Attribute(
-			name <- s.fragments.first().name
-			--modifier <- s.modifier.visibility.toString(),
-			--type <- s.type.type.name
+			name <- s.fragments.first().name,
+			modifier <- s.modifier.visibility.toString(),
+			type <- s.type.type.name
 		)
 }
 

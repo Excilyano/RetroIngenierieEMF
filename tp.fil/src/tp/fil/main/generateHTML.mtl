@@ -15,7 +15,32 @@
 	<h1>[model.name /]</h1><br/>
 
 	[for (class : Class | model.classes)]
-		<img src="http://yuml.me/diagram/scruffy/class/[ '[' /][class.name/]|[class.attributes.name.concat(';')/]|[class.methods.name.concat('();')/][ ']' /]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[ '[' /][class.name/]
+			|
+				[for (attr : Attribute | class.attributes)]
+	 				[if (attr.modifier = 'private')]
+	 					- [attr.name/] : [attr.type/];
+					[elseif (attr.modifier = 'public')]
+						+ [attr.name/] : [attr.type/];
+					[elseif (attr.modifier = 'protected')]
+						# [attr.name/] : [attr.type/];
+					[else]
+						~ [attr.name/] : [attr.type/];	
+	 				[/if]
+				[/for]
+			|
+				[for (meth : Method | class.methods)]
+	 				[if (meth.modifier = 'private')]
+	 					- [meth.name/]() : [meth.type/];
+					[elseif (meth.modifier = 'public')]
+						+ [meth.name/]() : [meth.type/];
+					[elseif (meth.modifier = 'protected')]
+						# [meth.name/]() : [meth.type/];
+					[else]
+						~ [meth.name/]() : [meth.type/];
+	 				[/if]
+				[/for]
+			[ ']' /]" >
 	[/for]
 
 
