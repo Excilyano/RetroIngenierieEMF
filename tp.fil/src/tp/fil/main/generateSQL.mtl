@@ -2,13 +2,13 @@
 [module generateSQL('http://data')]
 [comment 'platform:/resource/tp.fil/src/tp/fil/resources/Data.ecore' /]
 
-[template public generateSQL(model : Model)]
+[template public generateSQL(model : Model) post (replaceAll('\n', ''))]
 [comment @main/] 
 [file ('PetStore_database.sql', false, 'UTF-8')]
 
 [for (class : Class | model.classes)]
 CREATE TABLE [class.name/] (
-	[for (field : Attribute | class.attributes) separator (',\n\t')][field.name.concat('\tVARCHAR(100)')/][/for]
+	[for (field : Attribute | class.attributes) separator (',\n\t')][if field.type.equalsIgnoreCase('int') or field.type.equalsIgnoreCase('integer')][field.name.concat('\tINT')/][elseif field.type.equalsIgnoreCase('double')][field.name.concat('\tFLOAT')/][elseif field.type.equalsIgnoreCase('boolean')][field.name.concat('\tBOOLEAN')/][else][field.name.concat('\tVARCHAR(100)')/][/if][/for]
 );
 [/for]
 [/file]

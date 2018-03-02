@@ -97,18 +97,53 @@ public class DataComputation {
 									(EList<EObject>) current.eGet(current.eClass().getEStructuralFeature("bodyDeclarations"));
 							for (EObject bodyDeclaration : bodyDeclarations) {
 								if (bodyDeclaration instanceof FieldDeclaration) {
+									FieldDeclaration fDeclaration = (FieldDeclaration) bodyDeclaration;
+
 									EClass fieldClass = (EClass) dataPackage.getEClassifier("Attribute");
 									EObject fieldObject = dataPackage.getEFactoryInstance().create(fieldClass);
-									String fieldName = ((FieldDeclaration) bodyDeclaration).getFragments().get(0).getName();
+									
+									String fieldName = fDeclaration.getFragments().get(0).getName();
+									String modifier = fDeclaration.getModifier().getVisibility().getName();
+									String type = fDeclaration.getType().getType().getName();
+									
+									// Formatting name output
+									if (type.contains("<")) {
+										type = type
+												.substring(0, type.indexOf('>'))
+												.replaceAll("<", " of ");
+									}
+									type = type.replaceAll("[^\\s]*\\.", "");
+										
 									fieldObject.eSet(fieldObject.eClass().getEStructuralFeature("name"), fieldName);
+									fieldObject.eSet(fieldObject.eClass().getEStructuralFeature("modifier"), modifier);
+									fieldObject.eSet(fieldObject.eClass().getEStructuralFeature("type"), type);
+									
 									fieldList = (EList<EObject>) classObject.eGet(classObject.eClass().getEStructuralFeature("attributes"));
 									fieldList.add(fieldObject);
 									dataModel.getContents().addAll(fieldList);
 								} else if (bodyDeclaration instanceof MethodDeclaration) {
+									MethodDeclaration mDeclaration = (MethodDeclaration) bodyDeclaration;
+									
 									EClass methodClass = (EClass) dataPackage.getEClassifier("Method");
 									EObject methodObject = dataPackage.getEFactoryInstance().create(methodClass);
-									String methodName = ((MethodDeclaration) bodyDeclaration).getName();
+									
+									String methodName = mDeclaration.getName();
+									String modifier = mDeclaration.getModifier().getVisibility().getName();
+									String returnType = mDeclaration.getReturnType().getType().getName();
+									
+									// Formatting name output
+									if (returnType.contains("<")) {
+										returnType = returnType
+												.substring(0, returnType.indexOf('>'))
+												.replaceAll("<", " of ");
+									}
+									returnType = returnType.replaceAll("[^\\s]*\\.", "");
+									
+									
 									methodObject.eSet(methodObject.eClass().getEStructuralFeature("name"), methodName);
+									methodObject.eSet(methodObject.eClass().getEStructuralFeature("modifier"), modifier);
+									methodObject.eSet(methodObject.eClass().getEStructuralFeature("type"), returnType);
+
 									methodList = (EList<EObject>) classObject.eGet(classObject.eClass().getEStructuralFeature("methods"));
 									methodList.add(methodObject);
 									dataModel.getContents().addAll(methodList);

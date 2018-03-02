@@ -6,10 +6,10 @@ CREATE TABLE SellerContactInfo (
 	email	VARCHAR(100)
 );
 CREATE TABLE Tag (
-	tagID	VARCHAR(100),
+	tagID	INT,
 	items	VARCHAR(100),
 	tag	VARCHAR(100),
-	refCount	VARCHAR(100)
+	refCount	INT
 );
 CREATE TABLE Address (
 	addressID	VARCHAR(100),
@@ -18,8 +18,8 @@ CREATE TABLE Address (
 	city	VARCHAR(100),
 	state	VARCHAR(100),
 	zip	VARCHAR(100),
-	latitude	VARCHAR(100),
-	longitude	VARCHAR(100),
+	latitude	FLOAT,
+	longitude	FLOAT,
 	COMMA	VARCHAR(100)
 );
 CREATE TABLE FileUploadResponse (
@@ -42,14 +42,14 @@ CREATE TABLE Category (
 );
 CREATE TABLE RatingBean (
 	itemId	VARCHAR(100),
-	grade	VARCHAR(100),
+	grade	INT,
 	cf	VARCHAR(100)
 );
 CREATE TABLE PayPalBean (
 	postData	VARCHAR(100)
 );
 CREATE TABLE ZipLocation (
-	zipCode	VARCHAR(100),
+	zipCode	INT,
 	city	VARCHAR(100),
 	state	VARCHAR(100)
 );
@@ -63,9 +63,9 @@ CREATE TABLE Item (
 	price	VARCHAR(100),
 	address	VARCHAR(100),
 	contactInfo	VARCHAR(100),
-	totalScore	VARCHAR(100),
-	numberOfVotes	VARCHAR(100),
-	disabled	VARCHAR(100),
+	totalScore	INT,
+	numberOfVotes	INT,
+	disabled	INT,
 	tags	VARCHAR(100)
 );
 CREATE TABLE Product (
@@ -78,5 +78,5 @@ CREATE TABLE Product (
 CREATE TABLE CatalogFacade (
 	emf	VARCHAR(100),
 	utx	VARCHAR(100),
-	bDebug	VARCHAR(100)
+	bDebug	BOOLEAN
 );

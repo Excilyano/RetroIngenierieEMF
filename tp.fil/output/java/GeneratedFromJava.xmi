@@ -1,206 +1,206 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:data="http://data">
-  <data:Attribute name="contactInfoID"/>
-  <data:Attribute name="lastName"/>
-  <data:Attribute name="firstName"/>
-  <data:Attribute name="email"/>
-  <data:Method name="getContactInfoID"/>
-  <data:Method name="getLastName"/>
-  <data:Method name="getFirstName"/>
-  <data:Method name="getEmail"/>
-  <data:Method name="setEmail"/>
-  <data:Method name="setContactInfoID"/>
-  <data:Method name="setLastName"/>
-  <data:Method name="setFirstName"/>
-  <data:Method name="validateWithMessage"/>
-  <data:Attribute name="tagID"/>
-  <data:Attribute name="items"/>
-  <data:Attribute name="tag"/>
-  <data:Attribute name="refCount"/>
-  <data:Method name="getTagID"/>
-  <data:Method name="setTagID"/>
-  <data:Method name="getTag"/>
-  <data:Method name="setTag"/>
-  <data:Method name="getRefCount"/>
-  <data:Method name="setRefCount"/>
-  <data:Method name="incrementRefCount"/>
-  <data:Method name="getItems"/>
-  <data:Method name="setItems"/>
-  <data:Method name="itemExists"/>
-  <data:Attribute name="addressID"/>
-  <data:Attribute name="street1"/>
-  <data:Attribute name="street2"/>
-  <data:Attribute name="city"/>
-  <data:Attribute name="state"/>
-  <data:Attribute name="zip"/>
-  <data:Attribute name="latitude"/>
-  <data:Attribute name="longitude"/>
-  <data:Attribute name="COMMA"/>
-  <data:Method name="getAddressID"/>
-  <data:Method name="getStreet1"/>
-  <data:Method name="getStreet2"/>
-  <data:Method name="getCity"/>
-  <data:Method name="getState"/>
-  <data:Method name="getZip"/>
-  <data:Method name="getLatitude"/>
-  <data:Method name="getLongitude"/>
-  <data:Method name="setStreet1"/>
-  <data:Method name="setStreet2"/>
-  <data:Method name="setAddressID"/>
-  <data:Method name="setCity"/>
-  <data:Method name="setState"/>
-  <data:Method name="setZip"/>
-  <data:Method name="setLatitude"/>
-  <data:Method name="setLongitude"/>
-  <data:Method name="addressToString"/>
-  <data:Method name="validateWithMessage"/>
-  <data:Attribute name="itemId"/>
-  <data:Attribute name="productId"/>
-  <data:Attribute name="message"/>
-  <data:Attribute name="status"/>
-  <data:Attribute name="duration"/>
-  <data:Attribute name="durationString"/>
-  <data:Attribute name="startDate"/>
-  <data:Attribute name="endDate"/>
-  <data:Attribute name="uploadSize"/>
-  <data:Attribute name="thumbnail"/>
-  <data:Method name="getMessage"/>
-  <data:Method name="setMessage"/>
-  <data:Method name="getItemId"/>
-  <data:Method name="setItemId"/>
-  <data:Method name="getProductId"/>
-  <data:Method name="setProductId"/>
-  <data:Method name="getStatus"/>
-  <data:Method name="setStatus"/>
-  <data:Method name="getDuration"/>
-  <data:Method name="setDuration"/>
-  <data:Method name="getDurationString"/>
-  <data:Method name="setDurationString"/>
-  <data:Method name="getStartDate"/>
-  <data:Method name="setStartDate"/>
-  <data:Method name="getEndDate"/>
-  <data:Method name="setEndDate"/>
-  <data:Method name="getUploadSize"/>
-  <data:Method name="setUploadSize"/>
-  <data:Method name="getThumbnail"/>
-  <data:Method name="setThumbnail"/>
-  <data:Attribute name="categoryID"/>
-  <data:Attribute name="name"/>
-  <data:Attribute name="description"/>
-  <data:Attribute name="imageURL"/>
-  <data:Method name="getCategoryID"/>
-  <data:Method name="getName"/>
-  <data:Method name="getDescription"/>
-  <data:Method name="getImageURL"/>
-  <data:Method name="setImageURL"/>
-  <data:Method name="setCategoryID"/>
-  <data:Method name="setName"/>
-  <data:Method name="setDescription"/>
-  <data:Attribute name="itemId"/>
-  <data:Attribute name="grade"/>
-  <data:Attribute name="cf"/>
-  <data:Method name="getRatingText"/>
-  <data:Method name="setGrade"/>
-  <data:Method name="getGrade"/>
-  <data:Method name="setItemId"/>
-  <data:Method name="getItemId"/>
-  <data:Attribute name="postData"/>
-  <data:Method name="getPostData"/>
-  <data:Attribute name="zipCode"/>
-  <data:Attribute name="city"/>
-  <data:Attribute name="state"/>
-  <data:Method name="getZipCode"/>
-  <data:Method name="getCity"/>
-  <data:Method name="getState"/>
-  <data:Method name="setZipCode"/>
-  <data:Method name="setCity"/>
-  <data:Method name="setState"/>
-  <data:Attribute name="itemID"/>
-  <data:Attribute name="productID"/>
-  <data:Attribute name="name"/>
-  <data:Attribute name="description"/>
-  <data:Attribute name="imageURL"/>
-  <data:Attribute name="imageThumbURL"/>
-  <data:Attribute name="price"/>
-  <data:Attribute name="address"/>
-  <data:Attribute name="contactInfo"/>
-  <data:Attribute name="totalScore"/>
-  <data:Attribute name="numberOfVotes"/>
-  <data:Attribute name="disabled"/>
-  <data:Attribute name="tags"/>
-  <data:Method name="getItemID"/>
-  <data:Method name="getProductID"/>
-  <data:Method name="getName"/>
-  <data:Method name="getDescription"/>
-  <data:Method name="getPrice"/>
-  <data:Method name="getImageURL"/>
-  <data:Method name="getImageThumbURL"/>
-  <data:Method name="getAddress"/>
-  <data:Method name="getContactInfo"/>
-  <data:Method name="getTotalScore"/>
-  <data:Method name="getNumberOfVotes"/>
-  <data:Method name="getDisabled"/>
-  <data:Method name="setItemID"/>
-  <data:Method name="setProductID"/>
-  <data:Method name="setName"/>
-  <data:Method name="setDescription"/>
-  <data:Method name="setImageURL"/>
-  <data:Method name="setImageThumbURL"/>
-  <data:Method name="setPrice"/>
-  <data:Method name="setAddress"/>
-  <data:Method name="setContactInfo"/>
-  <data:Method name="setTotalScore"/>
-  <data:Method name="setNumberOfVotes"/>
-  <data:Method name="setDisabled"/>
-  <data:Method name="getTags"/>
-  <data:Method name="setTags"/>
-  <data:Method name="addRating"/>
-  <data:Method name="checkAverageRating"/>
-  <data:Method name="tagsAsString"/>
-  <data:Method name="containsTag"/>
-  <data:Method name="validateWithMessage"/>
-  <data:Attribute name="productID"/>
-  <data:Attribute name="categoryID"/>
-  <data:Attribute name="name"/>
-  <data:Attribute name="description"/>
-  <data:Attribute name="imageURL"/>
-  <data:Method name="getProductID"/>
-  <data:Method name="getCategoryID"/>
-  <data:Method name="getName"/>
-  <data:Method name="getDescription"/>
-  <data:Method name="getImageURL"/>
-  <data:Method name="setCategoryID"/>
-  <data:Method name="setProductID"/>
-  <data:Method name="setName"/>
-  <data:Method name="setDescription"/>
-  <data:Method name="setImageURL"/>
-  <data:Attribute name="emf"/>
-  <data:Attribute name="utx"/>
-  <data:Attribute name="bDebug"/>
-  <data:Method name="contextDestroyed"/>
-  <data:Method name="contextInitialized"/>
-  <data:Method name="getCategories"/>
-  <data:Method name="getProducts"/>
-  <data:Method name="getAllItemsFromCategory"/>
-  <data:Method name="getItemInChunkVLH"/>
-  <data:Method name="getItemsVLH"/>
-  <data:Method name="getItemsByItemID"/>
-  <data:Method name="getItemsByItemIDByRadius"/>
-  <data:Method name="getItemsByCategoryVLH"/>
-  <data:Method name="getItemsByCategoryByRadiusVLH"/>
-  <data:Method name="getZipCodeLocations"/>
-  <data:Method name="getProducts"/>
-  <data:Method name="getItems"/>
-  <data:Method name="getCategory"/>
-  <data:Method name="getItem"/>
-  <data:Method name="addItem"/>
-  <data:Method name="updateItem"/>
-  <data:Method name="doSearch"/>
-  <data:Method name="addTagsToItemId"/>
-  <data:Method name="addTag"/>
-  <data:Method name="getTagsInChunk"/>
-  <data:Method name="getTag"/>
-  <data:Method name="indexItem"/>
+  <data:Attribute name="contactInfoID" type="String" modifier="private"/>
+  <data:Attribute name="lastName" type="String" modifier="private"/>
+  <data:Attribute name="firstName" type="String" modifier="private"/>
+  <data:Attribute name="email" type="String" modifier="private"/>
+  <data:Method name="getContactInfoID" type="String" modifier="public"/>
+  <data:Method name="getLastName" type="String" modifier="public"/>
+  <data:Method name="getFirstName" type="String" modifier="public"/>
+  <data:Method name="getEmail" type="String" modifier="public"/>
+  <data:Method name="setEmail" type="void" modifier="public"/>
+  <data:Method name="setContactInfoID" type="void" modifier="public"/>
+  <data:Method name="setLastName" type="void" modifier="public"/>
+  <data:Method name="setFirstName" type="void" modifier="public"/>
+  <data:Method name="validateWithMessage" type="String[]" modifier="public"/>
+  <data:Attribute name="tagID" type="int" modifier="private"/>
+  <data:Attribute name="items" type="Collection of Item" modifier="private"/>
+  <data:Attribute name="tag" type="String" modifier="private"/>
+  <data:Attribute name="refCount" type="int" modifier="private"/>
+  <data:Method name="getTagID" type="int" modifier="public"/>
+  <data:Method name="setTagID" type="void" modifier="public"/>
+  <data:Method name="getTag" type="String" modifier="public"/>
+  <data:Method name="setTag" type="void" modifier="public"/>
+  <data:Method name="getRefCount" type="int" modifier="public"/>
+  <data:Method name="setRefCount" type="void" modifier="public"/>
+  <data:Method name="incrementRefCount" type="void" modifier="public"/>
+  <data:Method name="getItems" type="Collection of Item" modifier="public"/>
+  <data:Method name="setItems" type="void" modifier="public"/>
+  <data:Method name="itemExists" type="boolean" modifier="public"/>
+  <data:Attribute name="addressID" type="String" modifier="private"/>
+  <data:Attribute name="street1" type="String" modifier="private"/>
+  <data:Attribute name="street2" type="String" modifier="private"/>
+  <data:Attribute name="city" type="String" modifier="private"/>
+  <data:Attribute name="state" type="String" modifier="private"/>
+  <data:Attribute name="zip" type="String" modifier="private"/>
+  <data:Attribute name="latitude" type="double" modifier="private"/>
+  <data:Attribute name="longitude" type="double" modifier="private"/>
+  <data:Attribute name="COMMA" type="String" modifier="private"/>
+  <data:Method name="getAddressID" type="String" modifier="public"/>
+  <data:Method name="getStreet1" type="String" modifier="public"/>
+  <data:Method name="getStreet2" type="String" modifier="public"/>
+  <data:Method name="getCity" type="String" modifier="public"/>
+  <data:Method name="getState" type="String" modifier="public"/>
+  <data:Method name="getZip" type="String" modifier="public"/>
+  <data:Method name="getLatitude" type="double" modifier="public"/>
+  <data:Method name="getLongitude" type="double" modifier="public"/>
+  <data:Method name="setStreet1" type="void" modifier="public"/>
+  <data:Method name="setStreet2" type="void" modifier="public"/>
+  <data:Method name="setAddressID" type="void" modifier="public"/>
+  <data:Method name="setCity" type="void" modifier="public"/>
+  <data:Method name="setState" type="void" modifier="public"/>
+  <data:Method name="setZip" type="void" modifier="public"/>
+  <data:Method name="setLatitude" type="void" modifier="public"/>
+  <data:Method name="setLongitude" type="void" modifier="public"/>
+  <data:Method name="addressToString" type="String" modifier="public"/>
+  <data:Method name="validateWithMessage" type="String[]" modifier="public"/>
+  <data:Attribute name="itemId" type="String" modifier="private"/>
+  <data:Attribute name="productId" type="String" modifier="private"/>
+  <data:Attribute name="message" type="String" modifier="private"/>
+  <data:Attribute name="status" type="String" modifier="private"/>
+  <data:Attribute name="duration" type="String" modifier="private"/>
+  <data:Attribute name="durationString" type="String" modifier="private"/>
+  <data:Attribute name="startDate" type="String" modifier="private"/>
+  <data:Attribute name="endDate" type="String" modifier="private"/>
+  <data:Attribute name="uploadSize" type="String" modifier="private"/>
+  <data:Attribute name="thumbnail" type="String" modifier="private"/>
+  <data:Method name="getMessage" type="String" modifier="public"/>
+  <data:Method name="setMessage" type="void" modifier="public"/>
+  <data:Method name="getItemId" type="String" modifier="public"/>
+  <data:Method name="setItemId" type="void" modifier="public"/>
+  <data:Method name="getProductId" type="String" modifier="public"/>
+  <data:Method name="setProductId" type="void" modifier="public"/>
+  <data:Method name="getStatus" type="String" modifier="public"/>
+  <data:Method name="setStatus" type="void" modifier="public"/>
+  <data:Method name="getDuration" type="String" modifier="public"/>
+  <data:Method name="setDuration" type="void" modifier="public"/>
+  <data:Method name="getDurationString" type="String" modifier="public"/>
+  <data:Method name="setDurationString" type="void" modifier="public"/>
+  <data:Method name="getStartDate" type="String" modifier="public"/>
+  <data:Method name="setStartDate" type="void" modifier="public"/>
+  <data:Method name="getEndDate" type="String" modifier="public"/>
+  <data:Method name="setEndDate" type="void" modifier="public"/>
+  <data:Method name="getUploadSize" type="String" modifier="public"/>
+  <data:Method name="setUploadSize" type="void" modifier="public"/>
+  <data:Method name="getThumbnail" type="String" modifier="public"/>
+  <data:Method name="setThumbnail" type="void" modifier="public"/>
+  <data:Attribute name="categoryID" type="String" modifier="private"/>
+  <data:Attribute name="name" type="String" modifier="private"/>
+  <data:Attribute name="description" type="String" modifier="private"/>
+  <data:Attribute name="imageURL" type="String" modifier="private"/>
+  <data:Method name="getCategoryID" type="String" modifier="public"/>
+  <data:Method name="getName" type="String" modifier="public"/>
+  <data:Method name="getDescription" type="String" modifier="public"/>
+  <data:Method name="getImageURL" type="String" modifier="public"/>
+  <data:Method name="setImageURL" type="void" modifier="public"/>
+  <data:Method name="setCategoryID" type="void" modifier="public"/>
+  <data:Method name="setName" type="void" modifier="public"/>
+  <data:Method name="setDescription" type="void" modifier="public"/>
+  <data:Attribute name="itemId" type="String" modifier="private"/>
+  <data:Attribute name="grade" type="int" modifier="private"/>
+  <data:Attribute name="cf" type="CatalogFacade" modifier="private"/>
+  <data:Method name="getRatingText" type="String[]" modifier="public"/>
+  <data:Method name="setGrade" type="void" modifier="public"/>
+  <data:Method name="getGrade" type="int" modifier="public"/>
+  <data:Method name="setItemId" type="void" modifier="public"/>
+  <data:Method name="getItemId" type="String" modifier="public"/>
+  <data:Attribute name="postData" type="BuyNowPostData" modifier="none"/>
+  <data:Method name="getPostData" type="BuyNowPostData" modifier="public"/>
+  <data:Attribute name="zipCode" type="int" modifier="private"/>
+  <data:Attribute name="city" type="String" modifier="private"/>
+  <data:Attribute name="state" type="String" modifier="private"/>
+  <data:Method name="getZipCode" type="int" modifier="public"/>
+  <data:Method name="getCity" type="String" modifier="public"/>
+  <data:Method name="getState" type="String" modifier="public"/>
+  <data:Method name="setZipCode" type="void" modifier="public"/>
+  <data:Method name="setCity" type="void" modifier="public"/>
+  <data:Method name="setState" type="void" modifier="public"/>
+  <data:Attribute name="itemID" type="String" modifier="private"/>
+  <data:Attribute name="productID" type="String" modifier="private"/>
+  <data:Attribute name="name" type="String" modifier="private"/>
+  <data:Attribute name="description" type="String" modifier="private"/>
+  <data:Attribute name="imageURL" type="String" modifier="private"/>
+  <data:Attribute name="imageThumbURL" type="String" modifier="private"/>
+  <data:Attribute name="price" type="BigDecimal" modifier="private"/>
+  <data:Attribute name="address" type="Address" modifier="private"/>
+  <data:Attribute name="contactInfo" type="SellerContactInfo" modifier="private"/>
+  <data:Attribute name="totalScore" type="int" modifier="private"/>
+  <data:Attribute name="numberOfVotes" type="int" modifier="private"/>
+  <data:Attribute name="disabled" type="int" modifier="private"/>
+  <data:Attribute name="tags" type="Collection of Tag" modifier="private"/>
+  <data:Method name="getItemID" type="String" modifier="public"/>
+  <data:Method name="getProductID" type="String" modifier="public"/>
+  <data:Method name="getName" type="String" modifier="public"/>
+  <data:Method name="getDescription" type="String" modifier="public"/>
+  <data:Method name="getPrice" type="BigDecimal" modifier="public"/>
+  <data:Method name="getImageURL" type="String" modifier="public"/>
+  <data:Method name="getImageThumbURL" type="String" modifier="public"/>
+  <data:Method name="getAddress" type="Address" modifier="public"/>
+  <data:Method name="getContactInfo" type="SellerContactInfo" modifier="public"/>
+  <data:Method name="getTotalScore" type="int" modifier="public"/>
+  <data:Method name="getNumberOfVotes" type="int" modifier="public"/>
+  <data:Method name="getDisabled" type="int" modifier="public"/>
+  <data:Method name="setItemID" type="void" modifier="public"/>
+  <data:Method name="setProductID" type="void" modifier="public"/>
+  <data:Method name="setName" type="void" modifier="public"/>
+  <data:Method name="setDescription" type="void" modifier="public"/>
+  <data:Method name="setImageURL" type="void" modifier="public"/>
+  <data:Method name="setImageThumbURL" type="void" modifier="public"/>
+  <data:Method name="setPrice" type="void" modifier="public"/>
+  <data:Method name="setAddress" type="void" modifier="public"/>
+  <data:Method name="setContactInfo" type="void" modifier="public"/>
+  <data:Method name="setTotalScore" type="void" modifier="public"/>
+  <data:Method name="setNumberOfVotes" type="void" modifier="public"/>
+  <data:Method name="setDisabled" type="void" modifier="public"/>
+  <data:Method name="getTags" type="Collection of Tag" modifier="public"/>
+  <data:Method name="setTags" type="void" modifier="public"/>
+  <data:Method name="addRating" type="void" modifier="public"/>
+  <data:Method name="checkAverageRating" type="int" modifier="public"/>
+  <data:Method name="tagsAsString" type="String" modifier="public"/>
+  <data:Method name="containsTag" type="boolean" modifier="public"/>
+  <data:Method name="validateWithMessage" type="String[]" modifier="public"/>
+  <data:Attribute name="productID" type="String" modifier="private"/>
+  <data:Attribute name="categoryID" type="String" modifier="private"/>
+  <data:Attribute name="name" type="String" modifier="private"/>
+  <data:Attribute name="description" type="String" modifier="private"/>
+  <data:Attribute name="imageURL" type="String" modifier="private"/>
+  <data:Method name="getProductID" type="String" modifier="public"/>
+  <data:Method name="getCategoryID" type="String" modifier="public"/>
+  <data:Method name="getName" type="String" modifier="public"/>
+  <data:Method name="getDescription" type="String" modifier="public"/>
+  <data:Method name="getImageURL" type="String" modifier="public"/>
+  <data:Method name="setCategoryID" type="void" modifier="public"/>
+  <data:Method name="setProductID" type="void" modifier="public"/>
+  <data:Method name="setName" type="void" modifier="public"/>
+  <data:Method name="setDescription" type="void" modifier="public"/>
+  <data:Method name="setImageURL" type="void" modifier="public"/>
+  <data:Attribute name="emf" type="EntityManagerFactory" modifier="private"/>
+  <data:Attribute name="utx" type="UserTransaction" modifier="private"/>
+  <data:Attribute name="bDebug" type="boolean" modifier="private"/>
+  <data:Method name="contextDestroyed" type="void" modifier="public"/>
+  <data:Method name="contextInitialized" type="void" modifier="public"/>
+  <data:Method name="getCategories" type="List of Category" modifier="public"/>
+  <data:Method name="getProducts" type="List of Product" modifier="public"/>
+  <data:Method name="getAllItemsFromCategory" type="List of Item" modifier="public"/>
+  <data:Method name="getItemInChunkVLH" type="List of Item" modifier="public"/>
+  <data:Method name="getItemsVLH" type="List of Item" modifier="public"/>
+  <data:Method name="getItemsByItemID" type="List of Item" modifier="public"/>
+  <data:Method name="getItemsByItemIDByRadius" type="List of Item" modifier="public"/>
+  <data:Method name="getItemsByCategoryVLH" type="List of Item" modifier="public"/>
+  <data:Method name="getItemsByCategoryByRadiusVLH" type="List of Item" modifier="public"/>
+  <data:Method name="getZipCodeLocations" type="List of ZipLocation" modifier="public"/>
+  <data:Method name="getProducts" type="List of Product" modifier="public"/>
+  <data:Method name="getItems" type="List of Item" modifier="public"/>
+  <data:Method name="getCategory" type="Category" modifier="public"/>
+  <data:Method name="getItem" type="Item" modifier="public"/>
+  <data:Method name="addItem" type="String" modifier="public"/>
+  <data:Method name="updateItem" type="void" modifier="public"/>
+  <data:Method name="doSearch" type="Collection" modifier="public"/>
+  <data:Method name="addTagsToItemId" type="void" modifier="public"/>
+  <data:Method name="addTag" type="Tag" modifier="public"/>
+  <data:Method name="getTagsInChunk" type="List of Tag" modifier="public"/>
+  <data:Method name="getTag" type="Tag" modifier="public"/>
+  <data:Method name="indexItem" type="void" modifier="private"/>
   <data:Class name="SellerContactInfo" methods="/4 /5 /6 /7 /8 /9 /10 /11 /12" attributes="/0 /1 /2 /3"/>
   <data:Class name="Tag" methods="/17 /18 /19 /20 /21 /22 /23 /24 /25 /26" attributes="/13 /14 /15 /16"/>
   <data:Class name="Address" methods="/36 /37 /38 /39 /40 /41 /42 /43 /44 /45 /46 /47 /48 /49 /50 /51 /52 /53" attributes="/27 /28 /29 /30 /31 /32 /33 /34 /35"/>

@@ -7,17 +7,251 @@
   <body>
 	<h1>PetStore</h1><br/>
 
-		<img src="http://yuml.me/diagram/scruffy/class/[SellerContactInfo|contactInfoID;lastName;firstName;email;|getContactInfoID();getLastName();getFirstName();getEmail();setEmail();setContactInfoID();setLastName();setFirstName();validateWithMessage();]" >
-		<img src="http://yuml.me/diagram/scruffy/class/[Tag|tagID;items;tag;refCount;|getTagID();setTagID();getTag();setTag();getRefCount();setRefCount();incrementRefCount();getItems();setItems();itemExists();]" >
-		<img src="http://yuml.me/diagram/scruffy/class/[Address|addressID;street1;street2;city;state;zip;latitude;longitude;COMMA;|getAddressID();getStreet1();getStreet2();getCity();getState();getZip();getLatitude();getLongitude();setStreet1();setStreet2();setAddressID();setCity();setState();setZip();setLatitude();setLongitude();addressToString();validateWithMessage();]" >
-		<img src="http://yuml.me/diagram/scruffy/class/[FileUploadResponse|itemId;productId;message;status;duration;durationString;startDate;endDate;uploadSize;thumbnail;|getMessage();setMessage();getItemId();setItemId();getProductId();setProductId();getStatus();setStatus();getDuration();setDuration();getDurationString();setDurationString();getStartDate();setStartDate();getEndDate();setEndDate();getUploadSize();setUploadSize();getThumbnail();setThumbnail();]" >
-		<img src="http://yuml.me/diagram/scruffy/class/[Category|categoryID;name;description;imageURL;|getCategoryID();getName();getDescription();getImageURL();setImageURL();setCategoryID();setName();setDescription();]" >
-		<img src="http://yuml.me/diagram/scruffy/class/[RatingBean|itemId;grade;cf;|getRatingText();setGrade();getGrade();setItemId();getItemId();]" >
-		<img src="http://yuml.me/diagram/scruffy/class/[PayPalBean|postData;|getPostData();]" >
-		<img src="http://yuml.me/diagram/scruffy/class/[ZipLocation|zipCode;city;state;|getZipCode();getCity();getState();setZipCode();setCity();setState();]" >
-		<img src="http://yuml.me/diagram/scruffy/class/[Item|itemID;productID;name;description;imageURL;imageThumbURL;price;address;contactInfo;totalScore;numberOfVotes;disabled;tags;|getItemID();getProductID();getName();getDescription();getPrice();getImageURL();getImageThumbURL();getAddress();getContactInfo();getTotalScore();getNumberOfVotes();getDisabled();setItemID();setProductID();setName();setDescription();setImageURL();setImageThumbURL();setPrice();setAddress();setContactInfo();setTotalScore();setNumberOfVotes();setDisabled();getTags();setTags();addRating();checkAverageRating();tagsAsString();containsTag();validateWithMessage();]" >
-		<img src="http://yuml.me/diagram/scruffy/class/[Product|productID;categoryID;name;description;imageURL;|getProductID();getCategoryID();getName();getDescription();getImageURL();setCategoryID();setProductID();setName();setDescription();setImageURL();]" >
-		<img src="http://yuml.me/diagram/scruffy/class/[CatalogFacade|emf;utx;bDebug;|contextDestroyed();contextInitialized();getCategories();getProducts();getAllItemsFromCategory();getItemInChunkVLH();getItemsVLH();getItemsByItemID();getItemsByItemIDByRadius();getItemsByCategoryVLH();getItemsByCategoryByRadiusVLH();getZipCodeLocations();getProducts();getItems();getCategory();getItem();addItem();updateItem();doSearch();addTagsToItemId();addTag();getTagsInChunk();getTag();indexItem();]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[SellerContactInfo
+			|
+	 					- contactInfoID : String;
+	 					- lastName : String;
+	 					- firstName : String;
+	 					- email : String;
+			|
+						+ getContactInfoID() : String;
+						+ getLastName() : String;
+						+ getFirstName() : String;
+						+ getEmail() : String;
+						+ setEmail() : void;
+						+ setContactInfoID() : void;
+						+ setLastName() : void;
+						+ setFirstName() : void;
+						+ validateWithMessage() : String[];
+			]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[Tag
+			|
+	 					- tagID : int;
+	 					- items : Collection of Item;
+	 					- tag : String;
+	 					- refCount : int;
+			|
+						+ getTagID() : int;
+						+ setTagID() : void;
+						+ getTag() : String;
+						+ setTag() : void;
+						+ getRefCount() : int;
+						+ setRefCount() : void;
+						+ incrementRefCount() : void;
+						+ getItems() : Collection of Item;
+						+ setItems() : void;
+						+ itemExists() : boolean;
+			]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[Address
+			|
+	 					- addressID : String;
+	 					- street1 : String;
+	 					- street2 : String;
+	 					- city : String;
+	 					- state : String;
+	 					- zip : String;
+	 					- latitude : double;
+	 					- longitude : double;
+	 					- COMMA : String;
+			|
+						+ getAddressID() : String;
+						+ getStreet1() : String;
+						+ getStreet2() : String;
+						+ getCity() : String;
+						+ getState() : String;
+						+ getZip() : String;
+						+ getLatitude() : double;
+						+ getLongitude() : double;
+						+ setStreet1() : void;
+						+ setStreet2() : void;
+						+ setAddressID() : void;
+						+ setCity() : void;
+						+ setState() : void;
+						+ setZip() : void;
+						+ setLatitude() : void;
+						+ setLongitude() : void;
+						+ addressToString() : String;
+						+ validateWithMessage() : String[];
+			]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[FileUploadResponse
+			|
+	 					- itemId : String;
+	 					- productId : String;
+	 					- message : String;
+	 					- status : String;
+	 					- duration : String;
+	 					- durationString : String;
+	 					- startDate : String;
+	 					- endDate : String;
+	 					- uploadSize : String;
+	 					- thumbnail : String;
+			|
+						+ getMessage() : String;
+						+ setMessage() : void;
+						+ getItemId() : String;
+						+ setItemId() : void;
+						+ getProductId() : String;
+						+ setProductId() : void;
+						+ getStatus() : String;
+						+ setStatus() : void;
+						+ getDuration() : String;
+						+ setDuration() : void;
+						+ getDurationString() : String;
+						+ setDurationString() : void;
+						+ getStartDate() : String;
+						+ setStartDate() : void;
+						+ getEndDate() : String;
+						+ setEndDate() : void;
+						+ getUploadSize() : String;
+						+ setUploadSize() : void;
+						+ getThumbnail() : String;
+						+ setThumbnail() : void;
+			]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[Category
+			|
+	 					- categoryID : String;
+	 					- name : String;
+	 					- description : String;
+	 					- imageURL : String;
+			|
+						+ getCategoryID() : String;
+						+ getName() : String;
+						+ getDescription() : String;
+						+ getImageURL() : String;
+						+ setImageURL() : void;
+						+ setCategoryID() : void;
+						+ setName() : void;
+						+ setDescription() : void;
+			]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[RatingBean
+			|
+	 					- itemId : String;
+	 					- grade : int;
+	 					- cf : CatalogFacade;
+			|
+						+ getRatingText() : String[];
+						+ setGrade() : void;
+						+ getGrade() : int;
+						+ setItemId() : void;
+						+ getItemId() : String;
+			]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[PayPalBean
+			|
+						~ postData : BuyNowPostData;	
+			|
+						+ getPostData() : BuyNowPostData;
+			]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[ZipLocation
+			|
+	 					- zipCode : int;
+	 					- city : String;
+	 					- state : String;
+			|
+						+ getZipCode() : int;
+						+ getCity() : String;
+						+ getState() : String;
+						+ setZipCode() : void;
+						+ setCity() : void;
+						+ setState() : void;
+			]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[Item
+			|
+	 					- itemID : String;
+	 					- productID : String;
+	 					- name : String;
+	 					- description : String;
+	 					- imageURL : String;
+	 					- imageThumbURL : String;
+	 					- price : BigDecimal;
+	 					- address : Address;
+	 					- contactInfo : SellerContactInfo;
+	 					- totalScore : int;
+	 					- numberOfVotes : int;
+	 					- disabled : int;
+	 					- tags : Collection of Tag;
+			|
+						+ getItemID() : String;
+						+ getProductID() : String;
+						+ getName() : String;
+						+ getDescription() : String;
+						+ getPrice() : BigDecimal;
+						+ getImageURL() : String;
+						+ getImageThumbURL() : String;
+						+ getAddress() : Address;
+						+ getContactInfo() : SellerContactInfo;
+						+ getTotalScore() : int;
+						+ getNumberOfVotes() : int;
+						+ getDisabled() : int;
+						+ setItemID() : void;
+						+ setProductID() : void;
+						+ setName() : void;
+						+ setDescription() : void;
+						+ setImageURL() : void;
+						+ setImageThumbURL() : void;
+						+ setPrice() : void;
+						+ setAddress() : void;
+						+ setContactInfo() : void;
+						+ setTotalScore() : void;
+						+ setNumberOfVotes() : void;
+						+ setDisabled() : void;
+						+ getTags() : Collection of Tag;
+						+ setTags() : void;
+						+ addRating() : void;
+						+ checkAverageRating() : int;
+						+ tagsAsString() : String;
+						+ containsTag() : boolean;
+						+ validateWithMessage() : String[];
+			]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[Product
+			|
+	 					- productID : String;
+	 					- categoryID : String;
+	 					- name : String;
+	 					- description : String;
+	 					- imageURL : String;
+			|
+						+ getProductID() : String;
+						+ getCategoryID() : String;
+						+ getName() : String;
+						+ getDescription() : String;
+						+ getImageURL() : String;
+						+ setCategoryID() : void;
+						+ setProductID() : void;
+						+ setName() : void;
+						+ setDescription() : void;
+						+ setImageURL() : void;
+			]" >
+		<img src="http://yuml.me/diagram/scruffy/class/[CatalogFacade
+			|
+	 					- emf : EntityManagerFactory;
+	 					- utx : UserTransaction;
+	 					- bDebug : boolean;
+			|
+						+ contextDestroyed() : void;
+						+ contextInitialized() : void;
+						+ getCategories() : List of Category;
+						+ getProducts() : List of Product;
+						+ getAllItemsFromCategory() : List of Item;
+						+ getItemInChunkVLH() : List of Item;
+						+ getItemsVLH() : List of Item;
+						+ getItemsByItemID() : List of Item;
+						+ getItemsByItemIDByRadius() : List of Item;
+						+ getItemsByCategoryVLH() : List of Item;
+						+ getItemsByCategoryByRadiusVLH() : List of Item;
+						+ getZipCodeLocations() : List of ZipLocation;
+						+ getProducts() : List of Product;
+						+ getItems() : List of Item;
+						+ getCategory() : Category;
+						+ getItem() : Item;
+						+ addItem() : String;
+						+ updateItem() : void;
+						+ doSearch() : Collection;
+						+ addTagsToItemId() : void;
+						+ addTag() : Tag;
+						+ getTagsInChunk() : List of Tag;
+						+ getTag() : Tag;
+	 					- indexItem() : void;
+			]" >
 
 
   </body>
